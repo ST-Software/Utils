@@ -2,8 +2,9 @@
 Collection of utility functions written in C#
 
 ## DateTimeUtils
+[code]https://github.com/ST-Software/Utils/blob/master/src/DateTimeUtils.cs
 
-### DateTimeUtils.GetIntervalIntersection()  [code]https://github.com/ST-Software/Utils/blob/master/src/DateTimeUtils.cs
+### DateTimeUtils.GetIntervalIntersection()  
 Calculates the intersection (overlap) between two datetime intervals
 
 ### DateTimeUtils.GetIntervalDuration()
