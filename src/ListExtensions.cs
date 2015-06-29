@@ -37,7 +37,7 @@ namespace FinaDb.Common.Extensions
         }
 
         //Asynchronous version of the above
-        public static async Task<List<TEntity>> Synchronize<TEntity, TDto>(this List<TEntity> list, List<TDto> newList, Func<TEntity, TDto, Task> syncActionAsync,
+        public static async Task<List<TEntity>> SynchronizeAsync<TEntity, TDto>(this List<TEntity> list, List<TDto> newList, Func<TEntity, TDto, Task> syncActionAsync,
             Func<TEntity, Guid> getEntityId,
             Func<TDto, Guid?> getDtoId)
             where TEntity : class, new()
