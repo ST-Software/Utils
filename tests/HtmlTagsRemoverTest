@@ -1,0 +1,25 @@
+using FinaDb.Common.Services;
+using NUnit.Framework;
+
+namespace FinaDb.Tests.Services
+{
+    [TestFixture]
+    public class HtmlTagsRemoverTest
+    {
+        [Test]
+        // ReSharper disable once InconsistentNaming
+        public void Empty_html_should_turn_into_empty_string()
+        {
+            string emptyHtml = "<p></p><i></i><b><br/>&nbsp;</b>";
+            Assert.AreEqual(string.Empty, HtmlTagsRemover.GetTextFromHtml(emptyHtml));
+        }
+
+        // ReSharper disable once InconsistentNaming
+        [Test]
+        public void Do_not_strip_htm_if_it_contains_text()
+        {
+            string htmlWithText = "<p>Buuuu</p><i></i><b><br/>Some text</b>";
+            Assert.AreEqual("Buuuu Some text", HtmlTagsRemover.GetTextFromHtml(htmlWithText));
+        }
+    }
+}
